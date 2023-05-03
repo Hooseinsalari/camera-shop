@@ -1,0 +1,32 @@
+.container {
+    background: url(../../images/camera.png) 0 30% , url(../../images/mainSlider_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-grow: 2;
+}
+
+.text {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+}
+
+.text h3 {
+    font-size: 0.8rem;
+}
+
+.text button {
+    margin-top: 3rem;
+    background-color: #f59e0b;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
