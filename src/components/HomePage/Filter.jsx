@@ -12,19 +12,19 @@ const Filter = () => {
       <div className={styles["cate-fields"]}>
         <ul className={styles["cate-list"]}>
           <li>
-            <Link className={styles["cate-link"]}>dslr</Link>
+            <Link to="/store?filter=dslr" className={styles["cate-link"]}>dslr</Link>
           </li>
           <li>
-            <Link className={styles["cate-link"]}>compact</Link>
+            <Link to="/store?filter=compact" className={styles["cate-link"]}>compact</Link>
           </li>
           <li>
-            <Link className={styles["cate-link"]}>film camera</Link>
+            <Link to="/store?filter=film" className={styles["cate-link"]}>film camera</Link>
           </li>
           <li>
-            <Link className={styles["cate-link"]}>PROFESSIONAL</Link>
+            <Link to="/store?filter=professional" className={styles["cate-link"]}>PROFESSIONAL</Link>
           </li>
           <li>
-            <Link className={styles["cate-link"]}>MIRRORLESS</Link>
+            <Link to="/store?filter=mirrorless" className={styles["cate-link"]}>MIRRORLESS</Link>
           </li>
         </ul>
       </div>

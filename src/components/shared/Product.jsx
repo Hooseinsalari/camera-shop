@@ -11,7 +11,7 @@ import { truncate } from "../../helper/functions";
 
 const Product = ({ item, id }) => {
   return (
-    <Link className={styles.container} to={`product/${id}`}>
+    <Link className={styles.container} to={`/product/${id}`}>
       <div className={styles["pro-img"]}>
         <img
           src={`http://localhost:1337${item.image.data[0].attributes.formats.thumbnail.url}`}
@@ -27,7 +27,7 @@ const Product = ({ item, id }) => {
 
       <h4 className={styles["pro-price"]}>${item.price}</h4>
 
-      <span className={styles["pro-new"]}>new</span>
+      {item.isNew && <span className={styles["pro-new"]}>new</span>}
     </Link>
   );
 };

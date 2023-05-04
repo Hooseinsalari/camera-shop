@@ -1,3 +1,6 @@
+// react router dom
+import { Link } from "react-router-dom";
+
 // styles
 import styles from "./Navbar.module.css";
 
@@ -8,9 +11,9 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles["navbar-logo"]}>
-        <h3>
+        <Link to="/">
           camera<span>shop</span>
-        </h3>
+        </Link>
       </div>
 
       <form className={styles["navbar-search"]}>

@@ -6,6 +6,8 @@
   cursor: pointer;
   display: block;
   text-decoration: none;
+  width: 16rem;
+  position: relative;
 }
 
 .pro-img {
@@ -36,7 +38,7 @@
     color: var(--black);
     background-color: var(--gold-color);
     position: absolute;
-    top: 50px;
+    top: 10px;
     right: 10px;
     padding: 0.1rem 0.5rem;
     border-radius: 20px;
