@@ -1,0 +1,46 @@
+.container {
+  background-color: #313239;
+  padding: 0.8rem 1.2rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+
+.pro-img {
+  width: fit-content;
+  margin: auto;
+}
+
+.pro-category {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--gold-color);
+}
+
+.pro-title {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.pro-price {
+  margin-top: 3rem;
+  color: var(--gold-color);
+  font-weight: 500;
+}
+
+.pro-new{
+    color: var(--black);
+    background-color: var(--gold-color);
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}

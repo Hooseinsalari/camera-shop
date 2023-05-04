@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+:root {
+  --gold-color: #e7c457;
+  --black: #1f1f25;
+}
+
 *,
 *::after,
 *::before {
@@ -20,4 +25,14 @@ img {
 .app {
   background-color: #1f1f25;
   min-height: 100vh;
+}
+
+/* Swiper */
+.swiper-pagination-bullet-active {
+  background-color: var(--gold-color) !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #e7c457 !important;
 }
