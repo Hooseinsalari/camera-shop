@@ -14,7 +14,7 @@ import { truncate } from "../../helper/functions";
 
 const Cart = ({ isOpen, setIsOpen }) => {
   const { state, dispatch } = useContext(cartContext);
-//   const [selectValue, setSelectValue] = useState(1)
+  //   const [selectValue, setSelectValue] = useState(1)
 
   const productCountHandler = (e, item) => {
     // setSelectValue(e.target.value)
@@ -66,7 +66,11 @@ const Cart = ({ isOpen, setIsOpen }) => {
                 </div>
 
                 <div className={styles["pro-remove"]}>
-                  <button>
+                  <button
+                    onClick={() =>
+                      dispatch({ type: "REMOVE_ITEM", payload: item })
+                    }
+                  >
                     <AiOutlineClose />
                   </button>
                 </div>
@@ -79,8 +83,18 @@ const Cart = ({ isOpen, setIsOpen }) => {
               Total price: $<span>{state.totalPrice}</span>
             </h4>
             <div className={styles["cart-btns"]}>
-              <button className={styles["clear-btn"]}>Clear</button>
-              <button className={styles["checkout-btn"]}>Checkout</button>
+              <button
+                className={styles["clear-btn"]}
+                onClick={() => dispatch({ type: "CLEAR" })}
+              >
+                Clear
+              </button>
+              <button
+                className={styles["checkout-btn"]}
+                onClick={() => dispatch({ type: "CHECKOUT" })}
+              >
+                Checkout
+              </button>
             </div>
           </div>
         </div>

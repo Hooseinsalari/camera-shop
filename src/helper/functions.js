@@ -4,4 +4,14 @@ const truncate = (str) => {
   }
 };
 
-export { truncate };
+const sumItems = (items) => {
+  const itemCounter = items.reduce((total, item) => total + item.quantity, 0);
+  const totalPrice = items.reduce(
+    (total, item) => total + item.quantity * item.attributes.price,
+    0
+  );
+
+  return { itemCounter, totalPrice };
+};
+
+export { truncate, sumItems };

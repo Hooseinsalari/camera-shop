@@ -17,7 +17,7 @@ import { cartContext } from "../../context/CartContextProvider";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const {state, dispatch} = useContext(cartContext)
+  const { state, dispatch } = useContext(cartContext);
 
   const cartHandler = () => {
     setIsOpen((prevState) => !prevState);
@@ -40,7 +40,9 @@ const Navbar = () => {
 
       <div className={styles["navbar-cart"]} onClick={cartHandler}>
         <HiOutlineShoppingCart />
-        <span className={styles["cart-quantity"]}>{state.itemCounter}</span>
+        {state.itemCounter ? (
+          <span className={styles["cart-quantity"]}>{state.itemCounter}</span>
+        ) : null}
       </div>
 
       <div

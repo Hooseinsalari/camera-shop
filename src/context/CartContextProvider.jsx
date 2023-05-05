@@ -1,23 +1,13 @@
 import React, { createContext, useReducer } from "react";
 
+// function
+import { sumItems } from "../helper/functions";
+
 const initialState = {
   selectedItems: [],
   totalPrice: 0,
   itemCounter: 0,
   checkout: false,
-};
-
-const sumItems = (items) => {
-  console.log(items);
-  const itemCounter = items.reduce((total, item) => total + item.quantity, 0);
-  const totalPrice = items.reduce(
-    (total, item) => total + item.quantity * item.attributes.price,
-    0
-  );
-
-  console.log(totalPrice);
-
-  return { itemCounter, totalPrice };
 };
 
 const cartReducer = (state, action) => {
@@ -39,6 +29,7 @@ const cartReducer = (state, action) => {
         selectedItems: [...state.selectedItems],
         checkout: false,
         ...sumItems(state.selectedItems),
+        checkout: false,
       };
 
     case "REMOVE_ITEM":
@@ -57,12 +48,25 @@ const cartReducer = (state, action) => {
       const itemIndex = state.selectedItems.findIndex(
         (item) => item.id === action.payload.id
       );
-        console.log(state.selectedItems[itemIndex]);
+
       state.selectedItems[itemIndex].quantity = +action.count;
-      sumItems(state.selectedItems);
+
       return {
         ...state,
         ...sumItems(state.selectedItems),
+        checkout: false,
+      };
+
+    case "CHECKOUT":
+      return {
+        selectedItems: [],
+        checkout: true,
+      };
+
+    case "CLEAR":
+      return {
+        selectedItems: [],
+        checkout: false,
       };
   }
 };
