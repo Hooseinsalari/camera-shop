@@ -10,17 +10,22 @@ import Store from "./pages/Store";
 
 // components
 import Navbar from "./components/shared/Navbar";
+import CartContextProvider from "./context/CartContextProvider";
+
+// context
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/product/:id" element={<ProductPage />} />
-        <Route path="/store?" element={<Store />} />
-      </Routes>
-    </div>
+    <CartContextProvider>
+      <div className="app">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/store?" element={<Store />} />
+        </Routes>
+      </div>
+    </CartContextProvider>
   );
 }
 

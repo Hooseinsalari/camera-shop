@@ -1,3 +1,5 @@
+import { useContext, useState } from "react";
+
 // react router dom
 import { Link } from "react-router-dom";
 
@@ -7,7 +9,20 @@ import styles from "./Navbar.module.css";
 // icons
 import { HiOutlineShoppingCart, HiOutlineSearch } from "react-icons/hi";
 
+// components
+import Cart from "../Cart/Cart";
+
+// context
+import { cartContext } from "../../context/CartContextProvider";
+
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const {state, dispatch} = useContext(cartContext)
+
+  const cartHandler = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
   return (
     <div className={styles.navbar}>
       <div className={styles["navbar-logo"]}>
@@ -23,9 +38,19 @@ const Navbar = () => {
         </button>
       </form>
 
-      <div className={styles["navbar-cart"]}>
+      <div className={styles["navbar-cart"]} onClick={cartHandler}>
         <HiOutlineShoppingCart />
-        {/* <span className={styles["cart-quantity"]}>99</span> */}
+        <span className={styles["cart-quantity"]}>{state.itemCounter}</span>
+      </div>
+
+      <div
+        className={
+          isOpen
+            ? [styles["cart"], styles["cart-active"]].join(" ")
+            : styles["cart"]
+        }
+      >
+        <Cart isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </div>
   );
